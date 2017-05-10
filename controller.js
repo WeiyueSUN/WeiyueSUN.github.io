@@ -25,9 +25,10 @@ function fillDB(){
 
 			qbank[i]=new Array;
 			qbank[i][0]=data.quizlist[i].question;
-			qbank[i][1]=data.quizlist[i].op1;
-			qbank[i][2]=data.quizlist[i].op2;
-			qbank[i][3]=data.quizlist[i].op3;
+			qbank[i][1]=data.quizlist[i].option1;
+			qbank[i][2]=data.quizlist[i].option2;
+			qbank[i][3]=data.quizlist[i].option3;
+			qbank[i][4]=data.quizlist[i].option4;
 
 		}
 		 numberOfQuestions=qbank.length;
@@ -40,20 +41,31 @@ function fillDB(){
 		})//gtjson
 
 }//filldb
+function generateRndSeq(n){
 
+	var A = new Array;
+	var rnd;
+	for (var i = 0; i < n; i++){
+		A[i] = i + 1;
+	}
+	for (var i = 0; i < n - 1; i++) {
+		rnd = Math.random() * (n - i);
+		rnd = Math.floor(rnd);
+		[A[i], A[rnd + i]] = [A[rnd + i], A[i]];
+	}
+	return A;
+}
 
 function displayQuestion(){
 
-var rnd=Math.random()*3;rnd=Math.ceil(rnd);
-var q1;
-var q2;
-var q3;
-if(rnd==1){q1=qbank[qNumber][1];q2=qbank[qNumber][2];q3=qbank[qNumber][3];}
-if(rnd==2){q2=qbank[qNumber][1];q3=qbank[qNumber][2];q1=qbank[qNumber][3];}
-if(rnd==3){q3=qbank[qNumber][1];q1=qbank[qNumber][2];q2=qbank[qNumber][3];}
+var q = generateRndSeq(4)
 
-$(stage).append('<div class="questionText">'+qbank[qNumber][0]+'</div><div id="1" class="pix"><img src="img/'+q1+'"></div><div id="2" class="pix"><img src="img/'+q2+'"></div><div id="3" class="pix"><img src="img/'+q3+'"></div>');
+var s = '<div class="questionText">' + qbank[qNumber][0] + '</div>';
+for (var i = 1; i <= 4; i++) {
+	s = s + '<div id="' + i + '" class="pix"><img src="img/' + qbank[qNumber][q[i]] + '"></div>';
+}
 
+$(stage).append(s);
 $('.pix').click(function(){
 			if(qlock==false){qlock=true;
 			//correct answer

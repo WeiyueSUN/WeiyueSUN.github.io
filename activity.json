@@ -1,23 +1,26 @@
 {"quizlist":[
-  
+
 	{
-	"question":"Which picture shows a lion?",
-	"option1":"lion.png",
-	"option2":"tiger.png",
-	"option3":"cheetah.png"
+	"question":"请点击dog图片",
+	"option1":"dog.jpg",
+	"option2":"ball.jpg",
+	"option3":"dark.jpg",
+	"option4":"doll.jpg"
 	},
 	{
-	"question":"Which picture shows a labrador?",
-	"option1":"labrador.png",
-	"option2":"beagle.png",
-	"option3":"poodle.png"
+	"question":"请点击door图片",
+	"option1":"door.jpg",
+	"option2":"don't.jpg",
+	"option3":"duck.jpg",
+	"option4":"please.jpg"
 	},
 	{
-	"question":"Which picture shows a meerkat?",
-	"option1":"meerkat.png",
-	"option2":"chipmunk.png",
-	"option3":"squirrel.png"
-	}
+	"question":"请点击hurt图片",
+	"option1":"hurt.jpg",
+	"option2":"kiss.jpg",
+	"option3":"kick.jpg",
+	"option4":"wait.jpg"
+	},
 
 ]
 }

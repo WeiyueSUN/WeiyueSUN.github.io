@@ -3,7 +3,8 @@ $(document).ready(function () {
 var qNumber=0;
 var qbank=new Array();
 var opArray=new Array();
-var myloader="activity.json";
+//var myloader="activity.json";
+var myloader = "https://github.com/WeiyueSUN/WeiyueSUN.github.io/blob/master/activity.json";
 var stage="#game1";
 var stage2=new Object;
 var qlock=false;

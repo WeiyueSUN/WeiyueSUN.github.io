@@ -32,7 +32,7 @@ function fillDB(){
 
 		}
 		 numberOfQuestions=qbank.length;
-
+		 console.log(qbank);
 		 //alert(qbank);
 
 		 displayQuestion();
@@ -58,23 +58,25 @@ function generateRndSeq(n){
 
 function displayQuestion(){
 
-var q = generateRndSeq(4)
-
+var seq = generateRndSeq(4);
+console.log(q);
+var ansid;
 var s = '<div class="questionText">' + qbank[qNumber][0] + '</div>';
-for (var i = 1; i <= 4; i++) {
-	s = s + '<div id="' + i + '" class="pix"><img src="img/' + qbank[qNumber][q[i]] + '"></div>';
+for (var i = 0; i < 4; i++) {
+	if (seq[i] == 1) {ansid = i;}
+	s = s + '<div id="' + i + '" class="pix"><img src="img/' + qbank[qNumber][seq[i]] + '"></div>';
 }
-
+console.log(s);
 $(stage).append(s);
 $('.pix').click(function(){
 			if(qlock==false){qlock=true;
 			//correct answer
-			if(this.id==rnd){
+			if(this.id==ansid){
 				$(stage).append('<div class="feedback1">CORRECT</div>');
 				 score++;
 				}
 			//wrong answer
-			if(this.id!=rnd){
+			if(this.id!=ansid){
 				$(stage).append('<div class="feedback2">WRONG</div>');
 
 

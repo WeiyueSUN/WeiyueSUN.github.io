@@ -11,10 +11,6 @@ var qlock=false;
 var numberOfQuestions;
 var score=0;
 
-fillDB();
-
-
-
 function fillDB(){
 
 
@@ -42,6 +38,12 @@ function fillDB(){
 		})//gtjson
 
 }//filldb
+
+
+
+
+
+
 function generateRndSeq(n){
 
 	var A = new Array;
@@ -118,7 +120,7 @@ $('.pix').click(function(){
 	}//display final slide
 
 
-
+fillDB();
 
 
 

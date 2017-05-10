@@ -20,7 +20,7 @@ function fillDB(){
 
  		$.getJSON(myloader, function(data) {
 
-
+		console.log(data);
 		for(i=0;i<data.quizlist.length;i++){
 
 			qbank[i]=new Array;

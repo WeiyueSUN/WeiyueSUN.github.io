@@ -74,7 +74,7 @@ $(document).ready(function () {
 
 		}
 
-		var audio = new Audio("/voice/ball.mp3");
+		var audio = new Audio("/voice/dog.mp3");
 		audio.play();
 
 		//console.log(s);

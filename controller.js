@@ -74,7 +74,7 @@ $(document).ready(function () {
 
 		}
 
-		var audio = new Audio("/voice/dog.mp3");
+		var audio = new Audio("/voice/" + qbank[qNumber][5]);
 		audio.play();
 
 		//console.log(s);

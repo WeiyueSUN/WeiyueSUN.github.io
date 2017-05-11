@@ -27,6 +27,7 @@ $(document).ready(function () {
 				qbank[i][2]=data.quizlist[i].option2;
 				qbank[i][3]=data.quizlist[i].option3;
 				qbank[i][4]=data.quizlist[i].option4;
+				qbank[i][5]=data.quizlist[i].voice;
 
 			}
 			numberOfQuestions=qbank.length;

@@ -4,12 +4,13 @@ $(document).ready(function () {
 	var qbank=new Array();
 	var opArray=new Array();
 	var myloader="activity.json";
-//var myloader = "https://github.com/WeiyueSUN/WeiyueSUN.github.io/blob/master/activity.json";
 	var stage="#game1";
 	var stage2=new Object;
 	var qlock=false;
 	var numberOfQuestions;
 	var score=0;
+
+	fillDB();
 
 	function fillDB(){
 
@@ -70,7 +71,12 @@ $(document).ready(function () {
 		for (var i = 0; i < 4; i++) {
 			if (seq[i] == 1) {ansid = i;}
 			s = s + '<div id="' + i + '" class="pix"><img src="img/' + qbank[qNumber][seq[i]] + '"></div>';
+
 		}
+
+		var audio = new Audio("/voice/ball.mp3");
+		audio.play();
+
 		//console.log(s);
 		$(stage).append(s);
 		$('.pix').click(function(){
@@ -121,8 +127,6 @@ $(document).ready(function () {
 
 	}//display final slide
 
-
-	fillDB();
 
 
 
